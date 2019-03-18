@@ -1,14 +1,29 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser')
+const fs = require ('fs')
 
 const app = express();
-const port = '3001';
+const port = '3000';
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/looks/index.html');
+
+app.use(bodyParser.urlencoded({ extended: false}));
+
+
+
+
+app.post('/scores', (req, res) => {
+    let name = req.body.name;
+    let score = req.body.score;
+    let item = {"name":name, "score":score};
+    fs.appendFileSync(dataPath,
+        JSON.stringify(item, null, 4), 'utf-8', err => console.log(err));
+        res.redirect('/');
+
 });
 
-app.use(express.static(path.join(__dirname + '/')));
-app.listen(process.env.PORT || 5000, function () {
-    
+
+app.use(express.static(path.join(__dirname,'looks')));
+
+app.listen(port,function(){
 });
