@@ -5,7 +5,7 @@ var myGamePiece;//intialize game piece
 var FallingObject = [];
 var TheScore;
 function startGame() {
-    myGamePiece = new player(60, 60, "/Users/student/Desktop/Valentine-Dodge/LouDodger2/chrissy.jpg", 230, 440, "image");
+    myGamePiece = new player(60, 60, "chrissy.jpg", 230, 440, "image");
     TheScore = new player("50px", "consolas", "White", 300, 40, "text");
     // FallingObject.push(new player(10, 10, "white", 10, 10))
     // FallingObject.push(new player(10, 10, "white", 150, 300))
@@ -19,6 +19,7 @@ function startGame() {
 // makes the canvas board in the same area as the cube
 var myGameArea = {
     canvas: document.createElement("canvas"),
+
     start: function () {
         this.canvas.width = 580;
         this.canvas.height = 580;
@@ -147,11 +148,11 @@ function updateGameArea() {
         maxWidth = 480;
         //mutiple randoms added to give well more randomness 
         width = Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth);
-        FallingObject.push(new player(10, 10, "/Users/student/Desktop/Valentine-Dodge/LouDodger2/heart-background-clipart-10.png", width, 0, "image"));
+        FallingObject.push(new player(10, 10, "heart-background-clipart-10.png", width, 0, "image"));
         width2 = Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth);
-        FallingObject.push(new player(10, 10, "/Users/student/Desktop/Valentine-Dodge/LouDodger2/heart-background-clipart-10.png", width2, 0, "image"));
+        FallingObject.push(new player(10, 10, "heart-background-clipart-10.png", width2, 0, "image"));
         width3 = Math.floor(Math.random() * (maxWidth - minWidth + 1) + minWidth);
-        FallingObject.push(new player(10, 10, "/Users/student/Desktop/Valentine-Dodge/LouDodger2/heart-background-clipart-10.png", width3, 0, "image"));
+        FallingObject.push(new player(10, 10, "heart-background-clipart-10.png", width3, 0, "image"));
 
     }
 
